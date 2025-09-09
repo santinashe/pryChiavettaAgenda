@@ -6,19 +6,40 @@ namespace pryChiavettaAgenda
         {
             InitializeComponent();
         }
+
+        //variables
         string vContacto = "";
         string vTelefono = "";
+
+
+
+        //vectores
+
+
+        //indice
+        int indice = 0;
+        int vContador = 0;
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             vContacto = txtContacto.Text;
-            vTelefono = lstDatos.Text;
-            lstDatos.Items.Add("vContacto: + " + vContacto);
-            +" Telefono:" + vTelefono );
+            vTelefono = mtbNumero.Text;
+            lstDatos.Items.Add("Contacto: " + vContacto + " Telefono: " + vTelefono);
+            
+            indice++;
+            txtContacto.Focus();
+            vContador++;
+            lblContador.Text = Convert.ToString(vContador);
+            txtContacto.Text = "";
+            mtbNumero.Text = "";
+            
 
         }
 
         private void txtContacto_TextChanged(object sender, EventArgs e)
         {
+
+
+
 
 
         }
@@ -40,6 +61,8 @@ namespace pryChiavettaAgenda
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            txtContacto.Text = "";
+            mtbNumero.Text = "";
 
         }
 
@@ -54,6 +77,25 @@ namespace pryChiavettaAgenda
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtbNumero_TextChanged(object sender, EventArgs e)
+        {
+            if (mtbNumero.MaskFull == true)
+            {
+                btnAceptar.Enabled = true;
+
+            }
+            else
+            {
+                btnAceptar.Enabled = false;
+
+            }
+        }
+
+        private void lblCant_Click(object sender, EventArgs e)
         {
 
         }

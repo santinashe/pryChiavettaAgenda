@@ -41,6 +41,8 @@
             lblCant = new Label();
             lblFecha = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            lblContador = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // lblContacto
@@ -67,8 +69,9 @@
             // btnAceptar
             // 
             btnAceptar.BackColor = SystemColors.ControlText;
+            btnAceptar.Enabled = false;
             btnAceptar.ForeColor = Color.AliceBlue;
-            btnAceptar.Location = new Point(318, 322);
+            btnAceptar.Location = new Point(341, 401);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(121, 42);
             btnAceptar.TabIndex = 3;
@@ -80,7 +83,7 @@
             // 
             btnCancelar.BackColor = SystemColors.ControlText;
             btnCancelar.ForeColor = SystemColors.ControlLightLight;
-            btnCancelar.Location = new Point(318, 396);
+            btnCancelar.Location = new Point(214, 401);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(121, 42);
             btnCancelar.TabIndex = 4;
@@ -117,6 +120,7 @@
             mtbNumero.Size = new Size(130, 23);
             mtbNumero.TabIndex = 7;
             mtbNumero.MaskInputRejected += mskNumero_MaskInputRejected;
+            mtbNumero.TextChanged += mtbNumero_TextChanged;
             // 
             // txtContacto
             // 
@@ -133,11 +137,12 @@
             lblCant.BackColor = SystemColors.Desktop;
             lblCant.Font = new Font("Segoe UI", 12F);
             lblCant.ForeColor = Color.Cornsilk;
-            lblCant.Location = new Point(-1, 331);
+            lblCant.Location = new Point(3, 337);
             lblCant.Name = "lblCant";
-            lblCant.Size = new Size(163, 21);
+            lblCant.Size = new Size(165, 21);
             lblCant.TabIndex = 9;
-            lblCant.Text = "Cantidad de contactos";
+            lblCant.Text = " Contactos Agendados";
+            lblCant.Click += lblCant_Click;
             // 
             // lblFecha
             // 
@@ -147,9 +152,8 @@
             lblFecha.ForeColor = Color.Cornsilk;
             lblFecha.Location = new Point(12, 396);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(50, 21);
+            lblFecha.Size = new Size(0, 21);
             lblFecha.TabIndex = 10;
-            lblFecha.Text = "Fecha";
             lblFecha.Click += label1_Click;
             // 
             // contextMenuStrip1
@@ -158,12 +162,36 @@
             contextMenuStrip1.Size = new Size(61, 4);
             contextMenuStrip1.Text = "Agenda setting";
             // 
+            // lblContador
+            // 
+            lblContador.AutoSize = true;
+            lblContador.BackColor = SystemColors.ControlLight;
+            lblContador.Font = new Font("Microsoft Sans Serif", 12F);
+            lblContador.Location = new Point(174, 338);
+            lblContador.Name = "lblContador";
+            lblContador.Size = new Size(18, 20);
+            lblContador.TabIndex = 11;
+            lblContador.Text = "0";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ControlLight;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.ForeColor = SystemColors.ControlText;
+            label2.Location = new Point(99, 401);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 19);
+            label2.TabIndex = 12;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(465, 450);
+            Controls.Add(label2);
+            Controls.Add(lblContador);
             Controls.Add(lblFecha);
             Controls.Add(lblCant);
             Controls.Add(txtContacto);
@@ -176,7 +204,7 @@
             Controls.Add(lblContacto);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmPrincipal";
-            Text = "Agenda Contacto";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += frmPrincipal_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -195,5 +223,7 @@
         private Label lblCant;
         private Label lblFecha;
         private ContextMenuStrip contextMenuStrip1;
+        private Label lblContador;
+        private Label label2;
     }
 }
