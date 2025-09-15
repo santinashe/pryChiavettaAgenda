@@ -24,14 +24,14 @@ namespace pryChiavettaAgenda
             vContacto = txtContacto.Text;
             vTelefono = mtbNumero.Text;
             lstDatos.Items.Add("Contacto: " + vContacto + " Telefono: " + vTelefono);
-            
+
             indice++;
             txtContacto.Focus();
             vContador++;
             lblContador.Text = Convert.ToString(vContador);
             txtContacto.Text = "";
             mtbNumero.Text = "";
-            
+
 
         }
 
@@ -98,6 +98,13 @@ namespace pryChiavettaAgenda
         private void lblCant_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVercontactos_Click(object sender, EventArgs e)
+        {
+            frmMuestra nuevoFormulario = new frmMuestra();
+            nuevoFormulario.Show();     // Abre el nuevo formulario
+            this.Hide();                // Oculta el formulario actual (opcional
         }
     }
 }

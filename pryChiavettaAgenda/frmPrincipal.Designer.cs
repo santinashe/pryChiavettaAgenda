@@ -43,6 +43,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             lblContador = new Label();
             label2 = new Label();
+            btnVercontactos = new Button();
             SuspendLayout();
             // 
             // lblContacto
@@ -71,7 +72,7 @@
             btnAceptar.BackColor = SystemColors.ControlText;
             btnAceptar.Enabled = false;
             btnAceptar.ForeColor = Color.AliceBlue;
-            btnAceptar.Location = new Point(341, 401);
+            btnAceptar.Location = new Point(332, 396);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(121, 42);
             btnAceptar.TabIndex = 3;
@@ -83,7 +84,7 @@
             // 
             btnCancelar.BackColor = SystemColors.ControlText;
             btnCancelar.ForeColor = SystemColors.ControlLightLight;
-            btnCancelar.Location = new Point(214, 401);
+            btnCancelar.Location = new Point(174, 396);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(121, 42);
             btnCancelar.TabIndex = 4;
@@ -184,12 +185,25 @@
             label2.Size = new Size(0, 19);
             label2.TabIndex = 12;
             // 
+            // btnVercontactos
+            // 
+            btnVercontactos.BackColor = SystemColors.ControlText;
+            btnVercontactos.ForeColor = SystemColors.ControlLightLight;
+            btnVercontactos.Location = new Point(12, 396);
+            btnVercontactos.Name = "btnVercontactos";
+            btnVercontactos.Size = new Size(121, 42);
+            btnVercontactos.TabIndex = 13;
+            btnVercontactos.Text = "Ver contactos";
+            btnVercontactos.UseVisualStyleBackColor = false;
+            btnVercontactos.Click += btnVercontactos_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(465, 450);
+            Controls.Add(btnVercontactos);
             Controls.Add(label2);
             Controls.Add(lblContador);
             Controls.Add(lblFecha);
@@ -225,5 +239,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private Label lblContador;
         private Label label2;
+        private Button btnVercontactos;
     }
 }
