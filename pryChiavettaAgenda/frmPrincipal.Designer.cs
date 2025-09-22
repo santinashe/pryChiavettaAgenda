@@ -44,6 +44,7 @@
             lblContador = new Label();
             label2 = new Label();
             btnVercontactos = new Button();
+            btnVer = new Button();
             SuspendLayout();
             // 
             // lblContacto
@@ -197,12 +198,23 @@
             btnVercontactos.UseVisualStyleBackColor = false;
             btnVercontactos.Click += btnVercontactos_Click;
             // 
+            // btnVer
+            // 
+            btnVer.Location = new Point(198, 337);
+            btnVer.Name = "btnVer";
+            btnVer.Size = new Size(75, 23);
+            btnVer.TabIndex = 14;
+            btnVer.Text = "ver";
+            btnVer.UseVisualStyleBackColor = true;
+            btnVer.Click += btnVer_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(465, 450);
+            Controls.Add(btnVer);
             Controls.Add(btnVercontactos);
             Controls.Add(label2);
             Controls.Add(lblContador);
@@ -240,5 +252,6 @@
         private Label lblContador;
         private Label label2;
         private Button btnVercontactos;
+        private Button btnVer;
     }
 }

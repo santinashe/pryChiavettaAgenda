@@ -18,32 +18,35 @@ namespace pryChiavettaAgenda
             InitializeComponent();
         }
         //Declaracion de variables  
-        string[] vecContacto = new string[3];
+       public string[] vecContacto = new string[5];
+        
+        public string[] PasarDatos;
         int indice = 0;
+
 
 
         //accion del vector 
         private void lblContactoss_Click(object sender, EventArgs e)
         {
-            vecContacto[0] = "Juan Perez";
-            vecContacto[1] = "Lautaro Mendez";
-            vecContacto[2] = "Edgar Rodriguez";
-            vecContacto[3] = "Lucas Devalle";
 
-            lblContactoss.Text = vecContacto[0];
 
         }
 
         private void btnSigiente_Click(object sender, EventArgs e)
         {
-            indice++;
-            lblContactoss.Text = vecContacto[indice];
 
-            if (vecContacto.Length <= (indice + 1))
+            if (indice < 5)
+            {
+                btnAtras.Enabled = true;
+                lblContactoss.Text = PasarDatos[indice];
+                indice++;
+            }
+            else
             {
                 btnSigiente.Enabled = false;
-
+                indice--;
             }
+
         }
 
         private void frmMuestra_Load(object sender, EventArgs e)
@@ -53,8 +56,18 @@ namespace pryChiavettaAgenda
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            indice--;
-            lblContactoss.Text = vecContacto[indice];
+            if (indice >= 0)
+            {
+                btnSigiente.Enabled = true;
+
+                lblContactoss.Text = PasarDatos[indice];
+                indice--;
+            }
+            else
+            {
+                btnAtras.Enabled = false;
+                indice++;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

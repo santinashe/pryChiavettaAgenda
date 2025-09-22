@@ -1,3 +1,5 @@
+using System.Diagnostics.Contracts;
+
 namespace pryChiavettaAgenda
 {
     public partial class frmPrincipal : Form
@@ -14,7 +16,13 @@ namespace pryChiavettaAgenda
 
 
         //vectores
+        public string[] VecTelefono = new string[5];
+        public string[] VecContacto = new string[5];
+        public static string[] vecContactos = new string[5];
 
+        //static es que puede ser accedido sin la necesidad de crear una instancia de la clase. 
+        //Va a estar compartir la misma información. 
+        //Public lo pueden leer todos.
 
         //indice
         int indice = 0;
@@ -27,11 +35,16 @@ namespace pryChiavettaAgenda
 
             indice++;
             txtContacto.Focus();
-            vContador++;
             lblContador.Text = Convert.ToString(vContador);
             txtContacto.Text = "";
             mtbNumero.Text = "";
 
+            VecContacto[vContador] = (vTelefono + vContacto);
+            vContador++;
+
+            //frmMuestra verContactos = new frmMuestra();
+            //verContactos.PasarDatos = VecContacto;
+            //verContactos.ShowDialog();
 
         }
 
@@ -105,6 +118,14 @@ namespace pryChiavettaAgenda
             frmMuestra nuevoFormulario = new frmMuestra();
             nuevoFormulario.Show();     // Abre el nuevo formulario
             this.Hide();                // Oculta el formulario actual (opcional
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            frmMuestra verContactos = new frmMuestra();
+            verContactos.PasarDatos = VecContacto;
+            verContactos.ShowDialog();
+
         }
     }
 }
